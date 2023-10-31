@@ -1,0 +1,8 @@
+
+<!-- <app-show-recipe  *ngFor="let recipe of recipes; index as i" [recipe]="recipe"></app-show-recipe> -->
+
+<div  *ngFor= "let i of recipes" >
+
+<a routerLink="/show_recipe/{{i.id}}" routerLinkActive=""><h2>{{i.name}}</h2></a>
+</div>
+

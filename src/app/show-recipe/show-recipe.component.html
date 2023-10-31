@@ -1,0 +1,12 @@
+
+<div>
+    <h1>{{recipe.name}}</h1>
+    <h1>חומרים</h1>
+    <li *ngFor= "let i of recipe.products">
+        <a >{{i.count+" "}}{{i.kind+" "}}{{i.name}}</a>
+    </li>
+    <h1>אופן ההכנה</h1>
+    <li *ngFor= "let i of recipe.instructions">
+            <a >{{i}}</a>
+        </li>
+</div>
