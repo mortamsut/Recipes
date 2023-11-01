@@ -2,11 +2,19 @@ import { Routes, RouterModule } from "@angular/router";
 import { ShowRecipeComponent } from './show-recipe/show-recipe.component';
 import { NgModule } from '@angular/core';
 import {ListRecipesComponent} from './list-recipes/list-recipes.component';
+import { AddRecipeComponent } from "./add-recipe/add-recipe.component";
+import { AboutComponent } from "./about/about.component";
+import { HomepageComponent } from "./homepage/homepage.component";
+import { LoginComponent } from "./login/login.component";
 
 
 const routes: Routes = [
     { path: "show_recipe/:id", component: ShowRecipeComponent },
-    { path: "", component: ListRecipesComponent }
+    { path: "add_recipe", component: AddRecipeComponent },
+    { path: "recipes", component: ListRecipesComponent },
+    { path: "about", component: AboutComponent },
+    { path: "login", component: LoginComponent },
+    { path: "", component: HomepageComponent },
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
