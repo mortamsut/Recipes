@@ -8,20 +8,17 @@ import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { routing } from './routing';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowRecipeComponent,
     ListRecipesComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    routing
-  ],
+  imports: [BrowserModule, ReactiveFormsModule, routing,FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

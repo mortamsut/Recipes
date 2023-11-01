@@ -11,21 +11,29 @@ export class AddRecipeComponent {
 
   constructor(private service:RecipesService){}
   form1: FormGroup=new FormGroup({
-    
     name: new FormControl('', Validators.required),
     level: new FormControl('', Validators.required),
     time: new FormControl('', Validators.required),
-    product: new FormArray([]),
+    products: new FormArray([]),
     instructions:new FormArray([])
   })
 
 
-  get product(){
-    return this.form1.controls['product'] as FormArray<FormGroup>
+  get products(){
+    return this.form1.controls['products'] as FormArray<FormGroup>
   }
   addRecipe(){
 
-    this.product.push(new FormGroup({
+    this.products.push(new FormGroup({
+      count:new FormControl(''),
+      kind:new FormControl(''),
+      name:new FormControl(''),
+    }))
+    this.service.addRecipe(this.form1.value)
+  }
+  addProduct(){
+
+    this.products.push(new FormGroup({
       count:new FormControl(''),
       kind:new FormControl(''),
       name:new FormControl(''),
