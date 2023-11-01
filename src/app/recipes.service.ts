@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { recipe, Ingridient } from './recipes.model';
+import { recipe, Ingridient, User } from './recipes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,9 @@ export class RecipesService {
 
   ]
 
+  userArr:User[]=[
+    new User(1,"Michal","0556773811","michal1212",[1,3],[])
+  ]
 
   addRecipe(r: recipe) {
     if (recipe.length) {
