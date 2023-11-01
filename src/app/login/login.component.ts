@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User } from '../recipes.model';
 import { RecipesService } from '../recipes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { RecipesService } from '../recipes.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private recipeService: RecipesService) {
+  constructor(private recipeService: RecipesService, private router: Router) {
     this.users = this.recipeService.userArr;
   }
   users: User[] = [];
@@ -24,19 +25,26 @@ export class LoginComponent {
       const passwordValue = this.form.get('password')?.value;
       console.log(usernameValue);
       console.log(passwordValue);
-      let flagTemp= false;
-      for (let i = 0; i < this.users.length;i++ ) {
+      let flagTemp = false;
+      let id=0
+      for (let i = 0; i < this.users.length; i++) {
         if (
           usernameValue == this.users[i].name &&
           passwordValue == this.users[i].password
         ) {
-          flagTemp=true
+          flagTemp = true;
+          this.flag = false;
+          id=this.users[i].id;
         }
       }
-      if(flagTemp==false){
-      this.flag = true;
-      this.error = 'אופס, הסיסמה או שם המשתמש שגוי'; }
-      else this.submitEM.emit(this.form.value);
+      if (flagTemp == false) {
+        this.flag = true;
+        this.error = 'אופס, הסיסמה או שם המשתמש שגוי';
+      } else {
+        localStorage.setItem("user",id.toString())
+        this.router.navigate(['/']);
+        this.submitEM.emit(this.form.value);
+      }
     }
   }
   flag: boolean = false;
@@ -44,15 +52,3 @@ export class LoginComponent {
 
   @Output() submitEM = new EventEmitter();
 }
-// username: string = '';
-// password: string = '';
-// show: boolean = false;
-// submit() {
-//   console.log('user name is ' + this.username);
-//   this.clear();
-// }
-// clear() {
-//   this.username = '';
-//   this.password = '';
-//   this.show = true;
-// }
