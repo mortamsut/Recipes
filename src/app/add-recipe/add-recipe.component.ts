@@ -18,18 +18,17 @@ export class AddRecipeComponent {
     instructions:new FormArray([])
   })
 
-
   get products(){
     return this.form1.controls['products'] as FormArray<FormGroup>
   }
   addRecipe(){
 
-    this.products.push(new FormGroup({
-      count:new FormControl(''),
-      kind:new FormControl(''),
-      name:new FormControl(''),
-    }))
-    this.service.addRecipe(this.form1.value)
+    // this.products.push(new FormGroup({
+    //   count:new FormControl(''),
+    //   kind:new FormControl(''),
+    //   name:new FormControl(''),
+    // }))
+    // this.service.addRecipe(this.form1.value)
   }
   addProduct(){
 
