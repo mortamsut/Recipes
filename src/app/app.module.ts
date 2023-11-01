@@ -30,7 +30,6 @@ import { MatCardModule } from '@angular/material/card';
     HomepageComponent,
     LoginComponent,
   ],
-
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -43,18 +42,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
   ],
 
-  // imports: [
-  //   BrowserModule,
-  //   ReactiveFormsModule,
-  //   routing,
-  //   FormsModule,
-  //   BrowserAnimationsModule,
-  //   MatFormFieldModule,
-  //   MatCardModule,
-  // ],
-
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [MatButtonModule, MatInputModule, MatCardModule],
+  bootstrap: [AppComponent,],
+  exports: [MatButtonModule, MatInputModule, MatCardModule,],
 })
 export class AppModule {}
