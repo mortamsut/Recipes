@@ -9,16 +9,31 @@ import { routing } from './routing';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
+import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field'
 @NgModule({
   declarations: [
     AppComponent,
     ShowRecipeComponent,
     ListRecipesComponent,
     AddRecipeComponent,
+    AboutComponent,
+    HeaderComponent,
+    HomepageComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, routing,FormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, routing,FormsModule, BrowserAnimationsModule,MatFormFieldModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [
+    MatButtonModule,
+    MatInputModule,
+  ]
 })
 export class AppModule {}

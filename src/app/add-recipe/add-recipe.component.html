@@ -1,9 +1,9 @@
 <form [formGroup]="form1" (submit)="addRecipe()">
-<label>שם המתכון</label><br/>
+<label>The name of the recipe</label><br/>
 <input type="text" formControlName="name"/><br/>
-<label>דרגת קושי</label><br/>
+<label>Level of difficulty</label><br/>
 <input type="text" formControlName="level"/><br/>
-<label>זמן הכנה</label><br/>
+<label>preparation time</label><br/>
 <input type="number" formControlName="time"/><br/>
 
 <div formArrayName="products">
@@ -22,6 +22,7 @@
 <input type="button" value="add product" (click)="addProduct()"/>
 
 
-<input type="text" formControlName="prod"/><br/>
-<button type="submit">שלח</button>
+<!-- <input type="text" formControlName="prod"/> -->
+<br/>
+<button type="submit">send</button>
 </form>
