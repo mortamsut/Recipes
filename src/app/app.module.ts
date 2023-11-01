@@ -17,23 +17,26 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
     ShowRecipeComponent,
-    ListRecipesComponent,
+    //ListRecipesComponent,
     AddRecipeComponent,
     AboutComponent,
     HeaderComponent,
     HomepageComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, routing,FormsModule, BrowserAnimationsModule,MatFormFieldModule],
+  imports: [BrowserModule, ReactiveFormsModule, routing,FormsModule, BrowserAnimationsModule,MatFormFieldModule,MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
     MatButtonModule,
     MatInputModule,
+    MatCardModule
   ]
 })
 export class AppModule {}

@@ -1,8 +1,10 @@
 
 <!-- <app-show-recipe  *ngFor="let recipe of recipes; index as i" [recipe]="recipe"></app-show-recipe> -->
-
-<div  *ngFor= "let i of recipes" >
-
-<a routerLink="/show_recipe/{{i.id}}" routerLinkActive="" style="text-decoration:none"><h2>{{i.name}}</h2></a>
+<div *ngFor= "let i of recipes" (click)="ShowDetails(i.id)" >
+<mat-card class="card" >
+    <img mat-card-image src={{i.image}} alt="image" class="image_class" >
+    <mat-card-content>
+    <h2>{{i.name}}</h2>
+    </mat-card-content>  
+  </mat-card>
 </div>
-

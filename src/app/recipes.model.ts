@@ -2,7 +2,7 @@ export class recipe {
   constructor(
     public id?:number,
   public name?: string,
-  public image?: String,
+  public image?: any,
   public level?: string,
   public during?: number,
   public products?: Ingridient[],
