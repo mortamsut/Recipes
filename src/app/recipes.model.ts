@@ -2,21 +2,28 @@ export class recipe {
   constructor(
     public id?:number,
   public name?: string,
+  public image?: any,
   public level?: string,
   public during?: number,
   public products?: Ingridient[],
-  public instructions?: string[]){}
+  public instructions?: string[],
+  public userId?: number){}
 
 }
 
 export class Ingridient {
-  constructor( public id?:number, public count?:number, public kind?:string,
+  constructor( public id?:number,
+     public count?:number,
+      public kind?:string,
   public name?: string){}
 }
 
 export class IngridientToBuy {
-  constructor( public id?:number, public count?:number, public kind?:string,
-  public name?: string,public inHome?:boolean){}
+  constructor( public id?:number,
+     public count?:number,
+      public kind?:string,
+  public name?: string,
+  public inHome?:boolean){}
 
 }
 // משתנה לקוח:
