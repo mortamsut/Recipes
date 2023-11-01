@@ -7,10 +7,33 @@ import { recipe, Ingridient } from './recipes.model';
 export class RecipesService {
 
   recipeArr: recipe[] = [
-    new recipe(1, "recipe1", "level1", 2, [new Ingridient(1, 3, "cup","milk")], ["asd", "zxc"]),
-    new recipe(2, "recipe2", "level2", 2, [new Ingridient(1, 3, "cup","milk")], ["asd", "zxc"]),
-    new recipe(3, "recipe3", "level3", 2, [new Ingridient(1, 3, "cup","milk")], ["asd", "zxc"]),
-    new recipe(4, "recipe4", "level4", 2, [new Ingridient(1, 3, "cup","milk")], ["asd", "zxc"])
+    new recipe(1, "עוגיות שוקולד ציפס","./image/chips.png", "קל", 2,
+   [new Ingridient(1, 3, "כוס","קמח"),
+    new Ingridient(1, 1, "כוס","שוקולד ציפס"),
+    new Ingridient(1, 3, "M","ביצים")],
+     ["לשפוך את כל המרכיבים לקערה אחת", 
+     "לערבב בצורה אחידה",
+    "ליצור עיגולים",
+  "לאפות ב180 מעלות 20 דקות"]),
+    new recipe(2, "דונאטס", "בינוני","./image/donats.png", 2, [new Ingridient(1, 3, "כוס","קמח"),
+    new Ingridient(1, 1, "כוס","חלב"),
+    new Ingridient(1, 3, "M","ביצים")],
+     ["לשפוך את כל המרכיבים לקערה אחת", 
+     "לערבב בצורה אחידה",
+    "ליצור עיגולים",
+  "לאפות ב180 מעלות 20 דקות"]),
+    new recipe(3, "פנקייקס", "קל","./image/pancake.png", 2, [new Ingridient(1, 3, "כוס","קמח"),
+    new Ingridient(1, 1, "כוס","חלב "),
+    new Ingridient(1, 3, "M","ביצים")],
+     ["לשפוך את כל המרכיבים לקערה אחת", 
+     "לערבב בצורה אחידה",
+    " לטגן"]),
+    new recipe(4, "קאפקייקס", "קל","./image/capcaikes.png", 2,  [new Ingridient(1, 3, "כוס","קמח"),
+    new Ingridient(1, 1, "כוס"," חלב"),
+    new Ingridient(1, 3, "M","ביצים")],
+     ["לשפוך את כל המרכיבים לקערה אחת", 
+     "לערבב בצורה אחידה",
+  "לאפות ב180 מעלות 20 דקות"])
 
   ]
 
