@@ -36,7 +36,7 @@ export class User{
     public name:string,
     public phone:string,
     public password:string,
-    public idRecipes:string[],
+    public idRecipes:number[],
     public shoppingList:IngridientToBuy[]
   ){}
 }
