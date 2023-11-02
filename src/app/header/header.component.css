@@ -1,0 +1,12 @@
+div {
+  height: 10vh;
+  background-color: beige;
+}
+div nav {
+  display: flex;
+  gap: 5vw;
+  margin-right: 10vw;
+  position: absolute;
+  margin-top: 1.5%;
+  margin-bottom: auto;
+}
