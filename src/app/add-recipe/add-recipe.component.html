@@ -1,32 +1,70 @@
-<form [formGroup]="form1" (submit)="addRecipe()">
-<label>The name of the recipe</label><br/>
-<input type="text" formControlName="name"/><br/>
-<label>Level of difficulty</label><br/>
-<input type="text" formControlName="level"/><br/>
-<label>preparation time</label><br/>
-<input type="number" formControlName="time"/><br/>
+<mat-card>
+<form [formGroup]="form" (submit)="addRecipe()">
+    <mat-form-field>
+        <mat-label>שם המתכון</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>ניתוב תמונה</mat-label>
+        <input matInput formControlName="img">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>דרגת קושי</mat-label>
+        <input matInput formControlName="level">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>זמן הכנה</mat-label>
+        <input matInput formControlName="time">
+      </mat-form-field>
 
 <div formArrayName="products">
     <div *ngFor="let prod of products.controls; let i=index">
         <div [formGroupName]="i">
-            <label>name: </label>
-            <input formControlName="name"/>&nbsp;
-            <label>kind: </label>
-            <input formControlName="kind"/>&nbsp;
-            <label>count: </label>
-            <input formControlName="count"/>&nbsp;
+            <mat-form-field>
+                <mat-label>שם המוצר</mat-label>
+                <input matInput formControlName="name">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>כמות</mat-label>
+                <input matInput formControlName="count">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>סוג</mat-label>
+                <input matInput formControlName="kind">
+              </mat-form-field>
         </div>
     </div>
 </div>
+<button class="button" mat-raised-button (click)="addProduct()">הוספת מוצר</button>
+<!-- <input type="button" value="add product" (click)="addProduct()"/> -->
 
-<input type="button" value="add product" (click)="addProduct()"/>
-
+<div formArrayName="instructions">
+    <div *ngFor="let ins of products.controls; let i=index">
+        <div [formGroupName]="i">
+            <mat-form-field>
+                <mat-label>שם המוצר</mat-label>
+                <input matInput formControlName="name">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>כמות</mat-label>
+                <input matInput formControlName="count">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>סוג</mat-label>
+                <input matInput formControlName="kind">
+              </mat-form-field>
+        </div>
+    </div>
+</div>
+<button class="button" mat-raised-button (click)="addinstruction()">הוספת פעולה</button>
+<!-- <input type="button" value="add instruction" (click)="addinstruction()"/> -->
 
 <!-- <input type="text" formControlName="prod"/> -->
 <br/>
-<button type="submit">send</button>
+<button class="button" mat-stroked-button color="primary" type="submit" >הוסף</button>
+<!-- <button type="submit">send</button> -->
 </form>
-
+</mat-card>
 
 <!-- <mat-form-field>
     <mat-label>Input</mat-label>

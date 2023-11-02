@@ -10,8 +10,9 @@ import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 export class AddRecipeComponent {
 
   constructor(private service:RecipesService){}
-  form1: FormGroup=new FormGroup({
+    form: FormGroup=new FormGroup({
     name: new FormControl('', Validators.required),
+    img: new FormControl('', Validators.required),
     level: new FormControl('', Validators.required),
     time: new FormControl('', Validators.required),
     products: new FormArray([]),
@@ -19,16 +20,16 @@ export class AddRecipeComponent {
   })
 
   get products(){
-    return this.form1.controls['products'] as FormArray<FormGroup>
+    return this.form.controls['products'] as FormArray<FormGroup>
+  }
+  get instructions(){
+    return this.form.controls['instructions'] as FormArray<FormGroup>
   }
   addRecipe(){
-
-    this.products.push(new FormGroup({
-      count:new FormControl(''),
-      kind:new FormControl(''),
-      name:new FormControl(''),
-    }))
-    this.service.addRecipe(this.form1.value)
+    if (this.form.valid) {
+      const recipeData = this.form.value;
+    }
+    this.service.addRecipe(this.form.value)
   }
   addProduct(){
 
@@ -37,7 +38,16 @@ export class AddRecipeComponent {
       kind:new FormControl(''),
       name:new FormControl(''),
     }))
-    this.service.addRecipe(this.form1.value)
+    this.service.addRecipe(this.form.value)
+  }
+  addinstruction(){
+    
+    this.instructions.push(new FormGroup({
+      count:new FormControl(''),
+      kind:new FormControl(''),
+      name:new FormControl(''),
+    }))
+    this.service.addRecipe(this.form.value)
   }
 
 }
