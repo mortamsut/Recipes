@@ -24,7 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     AppComponent,
     ShowRecipeComponent,
     //ListRecipesComponent,
-    AddRecipeComponent,
+   AddRecipeComponent,
     AboutComponent,
     HeaderComponent,
     HomepageComponent,

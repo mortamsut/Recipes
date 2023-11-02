@@ -39,19 +39,11 @@
 <!-- <input type="button" value="add product" (click)="addProduct()"/> -->
 
 <div formArrayName="instructions">
-    <div *ngFor="let ins of products.controls; let i=index">
+    <div *ngFor="let ins of instructions.controls; let i=index">
         <div [formGroupName]="i">
             <mat-form-field>
-                <mat-label>שם המוצר</mat-label>
-                <input matInput formControlName="name">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>כמות</mat-label>
-                <input matInput formControlName="count">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>סוג</mat-label>
-                <input matInput formControlName="kind">
+                <mat-label>הוסף פעולה </mat-label>
+                <input matInput formControlName="instrctn">
               </mat-form-field>
         </div>
     </div>
