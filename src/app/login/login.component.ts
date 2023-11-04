@@ -26,7 +26,7 @@ export class LoginComponent {
       console.log(usernameValue);
       console.log(passwordValue);
       let flagTemp = false;
-      let id=0
+      let index=0
       for (let i = 0; i < this.users.length; i++) {
         if (
           usernameValue == this.users[i].name &&
@@ -34,14 +34,14 @@ export class LoginComponent {
         ) {
           flagTemp = true;
           this.flag = false;
-          id=this.users[i].id;
+          index=i;
         }
       }
       if (flagTemp == false) {
         this.flag = true;
         this.error = 'אופס, הסיסמה או שם המשתמש שגוי';
       } else {
-        localStorage.setItem("user",id.toString())
+        localStorage.setItem("user",JSON.stringify(this.users[index]))
         this.router.navigate(['/']);
         this.submitEM.emit(this.form.value);
       }

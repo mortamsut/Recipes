@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { recipe } from '../recipes.model';
+import { User, recipe } from '../recipes.model';
 import { RecipesService } from '../recipes.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,6 +14,8 @@ export class ShowRecipeComponent {
 
   id: number = 0;
   recipe: recipe | any;
+  flag:boolean = false;
+  flagEdit:boolean = false;
   constructor(private routeactive: ActivatedRoute, private service: RecipesService) { }
 
   ngOnInit() {
@@ -21,7 +23,23 @@ export class ShowRecipeComponent {
 
       this.id = x["id"]
       this.recipe = this.service.recipeArr.find(tmp => tmp.id == this.id);
-
+      let user=localStorage.getItem('user')||"";
+      let recipeUser=JSON.parse(user).idRecipes;
+      console.log(recipeUser)
+      if(recipeUser)
+        for(let i=0; i<recipeUser.length; i++) {
+            console.log(this.id)
+            if(recipeUser[i]==this.id){
+              console.log(this.flag)
+              this.flag=true;
+              console.log(this.flag)
+              break
+            }
+        }
     })
+  }
+  editRecipe(){
+    this.flagEdit=true;
+    console.log(this.flagEdit)
   }
 }

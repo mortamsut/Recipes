@@ -16,3 +16,7 @@ th, td {
   tr:nth-child(even) {
     background-color: #f3f5f5;
   }
+  input{
+    min-width: 30vw;
+    height: 5vh;
+  }
