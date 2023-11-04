@@ -36,8 +36,9 @@ export class AddRecipeComponent {
   addRecipe(){
     if (this.form.valid) {
       const recipeData = this.form.value;
+      this.service.addRecipe(this.form.value)
     }
-    this.service.addRecipe(this.form.value)
+    
     // this.router.navigate(['/recipes']);
   }
   addProduct(){
