@@ -39,9 +39,9 @@ export class AddRecipeComponent {
   addRecipe(){
     console.log("add recipe")
     if (this.form.valid) {
-     const id = localStorage.getItem("user");
-      const recipeData = this.form.value;
-      recipeData.userId=id;
+      let user=localStorage.getItem('user')||"";
+      let recipeData = this.form.value;
+      recipeData.userId=JSON.parse(user).id;
       this.service.addRecipe(recipeData);
        this.router.navigate(['/recipes']);
     }

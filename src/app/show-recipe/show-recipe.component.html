@@ -14,7 +14,6 @@
     <table>
         <th>אופן הכנה</th>
         <tr *ngFor= "let i of recipe.instructions">
-            <td >{{i.instruction}}</td>
             <td *ngIf="flagEdit"><input type="text" placeholder="{{i.instruction}}" value="{{i.instruction}}"></td>
             <td *ngIf="flagEdit==false">{{i.instruction}}</td>
         </tr>
