@@ -18,13 +18,14 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowRecipeComponent,
     //ListRecipesComponent,
-   AddRecipeComponent,
+    AddRecipeComponent,
     AboutComponent,
     HeaderComponent,
     HomepageComponent,
@@ -40,10 +41,11 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
   ],
 
   providers: [],
   bootstrap: [AppComponent,],
-  exports: [MatButtonModule, MatInputModule, MatCardModule,],
+  exports: [MatButtonModule, MatInputModule, MatCardModule,MatSelectModule,],
 })
 export class AppModule {}

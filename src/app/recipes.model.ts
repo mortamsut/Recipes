@@ -1,12 +1,12 @@
 export class recipe {
   constructor(
-    public id?:number,
+  public id?:number,
   public name?: string,
   public image?: string,
   public level?: string,
   public during?: number,
   public products?: Ingridient[],
-  public instructions?: string[],
+  public instructions?: Instructions[],
   public userId?: number){}
 
 }
@@ -17,7 +17,10 @@ export class Ingridient {
       public kind?:string,
   public name?: string){}
 }
-
+export class Instructions {
+  constructor( public instruction?:string,
+   ){}
+}
 export class IngridientToBuy {
   constructor( public id?:number,
      public count?:number,

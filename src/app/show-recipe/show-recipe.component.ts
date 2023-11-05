@@ -21,7 +21,7 @@ export class ShowRecipeComponent {
 
       this.id = x["id"]
       this.recipe = this.service.recipeArr.find(tmp => tmp.id == this.id);
-
+      console.log("rec show: ",this.recipe );
     })
   }
 }

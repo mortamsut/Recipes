@@ -1,5 +1,6 @@
 <mat-card>
-<form [formGroup]="form" (submit)="addRecipe()">
+  <!-- (submit)="addProduct()" -->
+<form [formGroup]="form" >
     <mat-form-field>
         <mat-label>שם המתכון</mat-label>
         <input matInput formControlName="name">
@@ -10,7 +11,11 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>דרגת קושי</mat-label>
-        <input matInput formControlName="level">
+        <mat-select  formControlName="level">
+          <mat-option value="קל">קל</mat-option>
+          <mat-option value="בינוני">בינוני</mat-option>
+          <mat-option value="קשה">קשה</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>זמן הכנה</mat-label>
@@ -30,7 +35,11 @@
               </mat-form-field>
               <mat-form-field>
                 <mat-label>סוג</mat-label>
-                <input matInput formControlName="kind">
+                <mat-select formControlName="kind">
+                  <mat-option value="כוס">כוס</mat-option>
+                  <mat-option value="כף">כף</mat-option>
+                  <mat-option value="כפית">כפית</mat-option>
+                </mat-select>
               </mat-form-field>
         </div>
     </div>
@@ -43,7 +52,7 @@
         <div [formGroupName]="i">
             <mat-form-field>
                 <mat-label>הוסף פעולה </mat-label>
-                <input matInput formControlName="instrctn">
+                <input matInput formControlName="instruction">
               </mat-form-field>
         </div>
     </div>
@@ -53,7 +62,8 @@
 
 <!-- <input type="text" formControlName="prod"/> -->
 <br/>
-<button class="button" mat-stroked-button color="primary" type="submit" >הוסף</button>
+<button class="button" mat-stroked-button color="primary" (click)="addRecipe()" >הוסף</button>
+<!-- type="submit" -->
 <!-- <button type="submit">send</button> -->
 </form>
 </mat-card>
