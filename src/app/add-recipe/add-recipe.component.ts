@@ -22,9 +22,9 @@ export class AddRecipeComponent {
   
     form: FormGroup=new FormGroup({
     name: new FormControl("", Validators.required),
-    img: new FormControl("", Validators.required),
+    image: new FormControl("", Validators.required),
     level: new FormControl("", Validators.required),
-    time: new FormControl("", Validators.required),
+    during: new FormControl("", Validators.required),
     products: new FormArray([],Validators.required),
     instructions:new FormArray([],Validators.required)
   })
