@@ -1,21 +1,19 @@
 
-<div style="margin-top: 3%;">
+<div style="margin-top: 3%;" >
     <img style="width: 20%;height: auto;" src={{recipe.image}} alt="image" class="image_class" >
     <h1><b>{{recipe.name}}</b></h1>
     <button *ngIf="flag" (click)="editRecipe()">ערוך מתכון</button>
     <table>
         <th>מצרכים</th>
         <tr *ngFor= "let i of recipe.products">
-            <td *ngIf="flagEdit"><input type="text" placeholder="{{i.count}} {{i.kind}} {{i.name}}" value="{{i.count}} {{i.kind}} {{i.name}}"></td>
-            <td *ngIf="flagEdit==false">{{i.count+" "}}{{i.kind+" "}}{{i.name}}</td>
+          <td>{{i.count+" "}}{{i.kind+" "}}{{i.name}}</td>
         </tr>
     </table>
-
     <table>
         <th>אופן הכנה</th>
         <tr *ngFor= "let i of recipe.instructions">
-            <td *ngIf="flagEdit"><input type="text" placeholder="{{i.instruction}}" value="{{i.instruction}}"></td>
-            <td *ngIf="flagEdit==false">{{i.instruction}}</td>
+           <td >{{i.instruction}}</td>
         </tr>
     </table>
+
 </div>

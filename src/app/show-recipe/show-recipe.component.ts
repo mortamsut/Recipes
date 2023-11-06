@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { User, recipe } from '../recipes.model';
 import { RecipesService } from '../recipes.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-show-recipe',
@@ -16,7 +16,7 @@ export class ShowRecipeComponent {
   recipe: recipe | any;
   flag:boolean = false;
   flagEdit:boolean = false;
-  constructor(private routeactive: ActivatedRoute, private service: RecipesService) { }
+  constructor(private routeactive: ActivatedRoute, private service: RecipesService, private router:Router ) { }
 
   ngOnInit() {
     this.routeactive.params.subscribe((x: any) => {
@@ -26,7 +26,7 @@ export class ShowRecipeComponent {
       console.log("rec show: ",this.recipe );
       let user=localStorage.getItem('user')||"";
       let recipeUser=JSON.parse(user).idRecipes;
-      console.log(recipeUser)
+      console.log("usr: ",recipeUser);
       if(recipeUser)
         for(let i=0; i<recipeUser.length; i++) {
             console.log(this.id)
@@ -40,7 +40,6 @@ export class ShowRecipeComponent {
     })
   }
   editRecipe(){
-    this.flagEdit=true;
-    console.log(this.flagEdit)
+    this.router.navigate(['/edit_recipe/',this.id]);
   }
 }

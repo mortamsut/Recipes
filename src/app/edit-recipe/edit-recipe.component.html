@@ -1,0 +1,31 @@
+<form [formGroup]="form" >
+<div style="margin-top: 3%;" >
+    <img style="width: 20%;height: auto;" src={{recipe.image}} alt="image" class="image_class" >
+    <h3>שם:<input type="text"  [formControlName]="'name'"></h3>
+    <h3>ניתוב תמונה:<input type="text" [formControlName]="'image'"></h3>
+    <h3>דרגת קושי:<input type="text" [formControlName]="'level'"></h3>
+    <h3>זמן הכנה:<input type="text" [formControlName]="'during'"></h3>
+    <table formArrayName="products">  
+    <thead>           
+        <th>מצרכים</th>
+    </thead> 
+    <tbody>
+        <tr *ngFor="let prod of products.controls; let i=index" [formGroupName]="i">  
+            <td class="td-input"><input type="text" [value]="prod.get('count')? prod.get('count') : 'No Value'" [formControlName]="'count'"></td> 
+            <td class="td-input"><input type="text" [value]="prod.get('kind')? prod.get('kind'): 'No Value' " [formControlName]="'kind'"></td>
+            <td class="td-input"><input type="text" [value]="prod.get('name')? prod.get('name'): 'No Value'" [formControlName]="'name'"></td>  
+        </tr>
+    </tbody>
+    </table>
+    <button class="button" mat-raised-button (click)="addProduct()">הוספת מוצר</button>
+    <table formArrayName="instructions">
+        <th>אופן הכנה</th>
+        <tr *ngFor="let ins of instructions.controls; let i=index" [formGroupName]="i">
+            <td><input type="text" [value]="ins.get('instruction')? ins.get('instruction') : 'No Value'" [formControlName]="'instruction'"></td>
+        </tr>
+    </table>
+    <button class="button" mat-raised-button (click)="addInstruction()">הוספת פעולה</button> 
+</div>
+<button class="button" mat-stroked-button color="primary" (click)="saveRecipe()" >שמירה</button>
+
+</form>

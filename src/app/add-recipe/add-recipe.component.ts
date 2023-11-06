@@ -43,7 +43,8 @@ export class AddRecipeComponent {
       let recipeData = this.form.value;
       recipeData.userId=JSON.parse(user).id;
       this.service.addRecipe(recipeData);
-       this.router.navigate(['/recipes']);
+      
+      this.router.navigate(['/recipes']);
     }
    return;
   }

@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
     HeaderComponent,
     HomepageComponent,
     LoginComponent,
+    EditRecipeComponent,
   ],
   imports: [
     BrowserModule,

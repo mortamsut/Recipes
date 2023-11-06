@@ -85,6 +85,17 @@ export class RecipesService {
     new User(2,"mor","0556773811","123",[1,3],[])
   ]
 
+   addRecipesUser(userId:number,id:number)
+   {
+     let index : number;
+      for (let i = 0; i < this.userArr.length; i++) {
+        if (userId == this.userArr[i].id ) {
+            index=i;
+          }
+      }
+    this.userArr
+   }
+
   addRecipe(r: recipe) {
     if (recipe.length) {
       r.id = (this.recipeArr[this.recipeArr.length - 1].id as number + 1);
@@ -95,5 +106,9 @@ export class RecipesService {
     console.log("instructionARR: ",r.instructions);
     console.log('recipe: ',r);
     this.recipeArr.push(r);
+  }
+  removeRecipe(id: number)
+  {
+    this.recipeArr = this.recipeArr.filter(recipe => recipe.id !== id);
   }
 }
