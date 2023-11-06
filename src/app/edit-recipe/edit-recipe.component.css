@@ -1,6 +1,12 @@
 table{
     margin-bottom: 2%;
 }
+.first-table th,
+.first-table td {
+    text-align: right;
+    padding: 15px;
+    min-width: 5vw;
+}
 th, td {
     text-align: right;
     padding: 15px;
@@ -11,7 +17,7 @@ th, td {
     background-color: #f3f5f5;
   }
   .td-input {
-    max-width: 20vw;
+    max-width: 30vw;
   }
   td input{
     min-width: 30vw;

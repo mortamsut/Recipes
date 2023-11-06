@@ -2,7 +2,11 @@
 <div style="margin-top: 3%;" >
     <img style="width: 20%;height: auto;" src={{recipe.image}} alt="image" class="image_class" >
     <h1><b>{{recipe.name}}</b></h1>
-    <button *ngIf="flag" (click)="editRecipe()">ערוך מתכון</button>
+    <button *ngIf="flag"  class="button" mat-stroked-button color="black" (click)="editRecipe()" >ערוך מתכון</button>
+    <button *ngIf="flag"  class="button" mat-stroked-button color="black" (click)="removeRecipe()" >מחק מתכון</button>
+
+    <h3>דרגת קושי: {{recipe.level}}</h3>
+    <h3>זמן: {{recipe.during}} דק'</h3>
     <table>
         <th>מצרכים</th>
         <tr *ngFor= "let i of recipe.products">

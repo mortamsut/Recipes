@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
+import { MyListRecipesComponent } from './my-list-recipes/my-list-recipes.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
     HomepageComponent,
     LoginComponent,
     EditRecipeComponent,
+    MyListRecipesComponent,
   ],
   imports: [
     BrowserModule,

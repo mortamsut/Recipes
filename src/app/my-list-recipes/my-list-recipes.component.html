@@ -1,0 +1,8 @@
+<div *ngFor= "let i of recipes" (click)="ShowDetails(i.id)" >
+    <mat-card class="card" >
+        <img mat-card-image src={{i.image}} alt="image" class="image_class" >
+        <mat-card-content>
+        <h2>{{i.name}}</h2>
+        </mat-card-content>  
+      </mat-card>
+    </div>

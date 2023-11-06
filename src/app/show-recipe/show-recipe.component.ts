@@ -44,4 +44,8 @@ export class ShowRecipeComponent {
   editRecipe(){
     this.router.navigate(['/edit_recipe/',this.id]);
   }
+  removeRecipe(){
+   this.service.removeRecipe(this.id);
+   this.router.navigate(['/recipes/']);
+  }
 }
