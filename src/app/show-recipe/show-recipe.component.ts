@@ -23,9 +23,11 @@ export class ShowRecipeComponent {
 
       this.id = x["id"]
       this.recipe = this.service.recipeArr.find(tmp => tmp.id == this.id);
+      console.log("userArr: ",this.service.userArr);
       console.log("rec show: ",this.recipe );
       let user=localStorage.getItem('user')||"";
-      let recipeUser=JSON.parse(user).idRecipes;
+      let updatuser=this.service.userArr.find(tmp => tmp.id ==JSON.parse(user).id);
+      let recipeUser=updatuser?.idRecipes;
       console.log("usr: ",recipeUser);
       if(recipeUser)
         for(let i=0; i<recipeUser.length; i++) {

@@ -113,8 +113,12 @@ export class RecipesService {
     this.recipeArr.push(r);
     this.addRecipesUser(r.userId,r.id);
   }
-  removeRecipe(id: number)
+  editRecipe(r: recipe)
   {
-    this.recipeArr = this.recipeArr.filter(recipe => recipe.id !== id);
-  }
+    const index = this.recipeArr.findIndex(recipe => recipe.id == r.id);
+    if (index != -1) {
+        this.recipeArr[index]=r;
+      }
+  }  
+  
 }

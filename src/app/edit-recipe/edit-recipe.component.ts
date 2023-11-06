@@ -94,11 +94,10 @@ export class EditRecipeComponent {
   saveRecipe() {
     console.log(this.form.value);
     // this.service.recipeArr = this.service.recipeArr.filter(tmp => tmp.id !== this.id);
-   this.service.removeRecipe(this.id);
     let recipeData = this.form.value;
     recipeData.userId=this.recipe.userId;
     recipeData.id=this.id;
-    this.service.addRecipe(recipeData);
+    this.service.editRecipe(recipeData);
     this.router.navigate(['/recipes']);
   }
 
