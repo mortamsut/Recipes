@@ -85,15 +85,20 @@ export class RecipesService {
     new User(2,"mor","0556773811","123",[1,3],[])
   ]
 
-   addRecipesUser(userId:number,id:number)
+   addRecipesUser(userId:number|any, id:number|any)
    {
-     let index : number;
-      for (let i = 0; i < this.userArr.length; i++) {
-        if (userId == this.userArr[i].id ) {
-            index=i;
-          }
+    const userIndex = this.userArr.findIndex(user => user.id === userId);
+    if (userIndex !== -1) {
+      console.log("usr detail: "+this.userArr[userIndex].idRecipes);
+      if (!this.userArr[userIndex].idRecipes) {
+        this.userArr[userIndex].idRecipes = [];
       }
-    this.userArr
+      
+      if (!this.userArr[userIndex].idRecipes.includes(id)+"id rec: "+id) {
+        this.userArr[userIndex].idRecipes.push(id);
+      }
+      console.log("usr detail: ", this.userArr[userIndex].idRecipes+" id rec: "+id);
+    }
    }
 
   addRecipe(r: recipe) {
@@ -106,6 +111,7 @@ export class RecipesService {
     console.log("instructionARR: ",r.instructions);
     console.log('recipe: ',r);
     this.recipeArr.push(r);
+    this.addRecipesUser(r.userId,r.id);
   }
   removeRecipe(id: number)
   {
