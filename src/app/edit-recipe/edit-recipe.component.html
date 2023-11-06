@@ -3,7 +3,14 @@
     <img style="width: 20%;height: auto;" src={{recipe.image}} alt="image" class="image_class" >
     <h3>שם:<input type="text"  [formControlName]="'name'"></h3>
     <h3>ניתוב תמונה:<input type="text" [formControlName]="'image'"></h3>
-    <h3>דרגת קושי:<input type="text" [formControlName]="'level'"></h3>
+    <h3>דרגת קושי:
+        <!-- <input type="text" [formControlName]="'level'"> -->
+        <mat-select class="op" [value]="recipe.level? recipe.level: 'No Value' " [formControlName]="'level'">
+            <mat-option class="op" value="קל">קל</mat-option>
+            <mat-option class="op"  value="בינוני">בינוני</mat-option>
+            <mat-option class="op"  value="קשה">קשה</mat-option>
+          </mat-select>
+    </h3>
     <h3>זמן הכנה:<input type="text" [formControlName]="'during'"></h3>
     <table formArrayName="products" class="first-table">  
     <thead>           
