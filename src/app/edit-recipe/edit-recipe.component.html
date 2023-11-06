@@ -14,7 +14,17 @@
     <tbody>
         <tr *ngFor="let prod of products.controls; let i=index" [formGroupName]="i"> 
             <td class="td-input"><input type="text" [value]="prod.get('name')? prod.get('name'): 'No Value'" [formControlName]="'name'"></td>  
-            <td class="td-input"><input type="text" [value]="prod.get('kind')? prod.get('kind'): 'No Value' " [formControlName]="'kind'"></td>
+            <td class="td-input">
+                <!-- <input type="text" [value]="prod.get('kind')? prod.get('kind'): 'No Value' " [formControlName]="'kind'"> -->
+                <mat-select [value]="prod.get('kind')? prod.get('kind'): 'No Value' " [formControlName]="'kind'">
+                    <mat-option value="כוס">כוס</mat-option>
+                    <mat-option value="כף">כף</mat-option>
+                    <mat-option value="כפית">כפית</mat-option>
+                    <mat-option value="S">S</mat-option>
+                    <mat-option value="M">M</mat-option>
+                    <mat-option value="L">L</mat-option>
+                  </mat-select>
+            </td>
             <td class="td-input"><input type="text" [value]="prod.get('count')? prod.get('count') : 'No Value'" [formControlName]="'count'"></td> 
            
         </tr>
