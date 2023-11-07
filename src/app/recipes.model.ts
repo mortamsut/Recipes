@@ -26,7 +26,7 @@ export class IngridientToBuy {
      public count?:number,
       public kind?:string,
   public name?: string,
-  public inHome?:boolean){}
+  public need?:boolean){}
 
 }
 // משתנה לקוח:

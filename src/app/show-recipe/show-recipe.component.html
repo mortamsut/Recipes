@@ -10,7 +10,9 @@
     <table>
         <th>מצרכים</th>
         <tr *ngFor= "let i of recipe.products">
-          <td>{{i.count+" "}}{{i.kind+" "}}{{i.name}}</td>
+          <td>{{i.count+" "}}{{i.kind+" "}}{{i.name}}
+                <mat-checkbox class="example-margin"  [(ngModel)]="i.isSelected" (change)="toggleSelection(i)">לקניה</mat-checkbox>
+          </td>
         </tr>
     </table>
     <table>

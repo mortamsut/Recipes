@@ -21,6 +21,9 @@ import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { MyListRecipesComponent } from './my-list-recipes/my-list-recipes.component';
+import {MatIconModule} from '@angular/material/icon';
+import { BuyListComponent } from './buy-list/buy-list.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { MyListRecipesComponent } from './my-list-recipes/my-list-recipes.compon
     LoginComponent,
     EditRecipeComponent,
     MyListRecipesComponent,
+    BuyListComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { MyListRecipesComponent } from './my-list-recipes/my-list-recipes.compon
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatIconModule,
+    MatCheckboxModule,
   ],
 
   providers: [],

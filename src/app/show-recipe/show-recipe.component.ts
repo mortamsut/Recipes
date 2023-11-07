@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User, recipe } from '../recipes.model';
+import { User, recipe,Ingridient } from '../recipes.model';
 import { RecipesService } from '../recipes.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router} from '@angular/router';
@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
 })
 export class ShowRecipeComponent {
 
-
+  // selectedProducts: any[] = [];
   id: number = 0;
   recipe: recipe | any;
   flag:boolean = false;
@@ -41,6 +41,21 @@ export class ShowRecipeComponent {
         }
     })
   }
+
+  toggleSelection(product: any){
+
+    // if (product.isSelected) {
+    //   this.selectedProducts.push(product);
+    // } else {
+    //   const index = this.selectedProducts.findIndex((p) => p.id === product.id);
+    //   if (index !== -1) {
+    //     this.selectedProducts.splice(index, 1);
+    //   }
+    // }
+     this.service.updateListBuy(product,product.isSelected);
+    // console.log("selectedProducts: ",this.selectedProducts);
+  }
+
   editRecipe(){
     this.router.navigate(['/edit_recipe/',this.id]);
   }

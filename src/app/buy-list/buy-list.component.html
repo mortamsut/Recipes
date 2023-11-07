@@ -1,0 +1,8 @@
+<div style="margin-top: 3%;" >
+    <table>
+        <th>מצרכים</th>
+        <tr *ngFor= "let i of products">
+          <td>{{i.count+" "}}{{i.kind+" "}}{{i.name}}</td>
+        </tr>
+    </table>
+</div>

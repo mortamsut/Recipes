@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { recipe, Ingridient, User, Instructions } from './recipes.model';
+import { recipe, Ingridient, User, Instructions, IngridientToBuy } from './recipes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -81,10 +81,10 @@ export class RecipesService {
   ]
 
   userArr:User[]=[
-    new User(1,"Michal","0556773811","michal1212",[1,2,3,4],[]),
+    new User(1,"Michal","0556773811","michal1212",[1,2,3,4],[new IngridientToBuy(1, 1, "כוס","חלב",true)]),
     new User(2,"mor","0556773811","123",[5,6,7,8,9,10],[])
   ]
-
+   
    addRecipesUser(userId:number|any, id:number|any)
    {
     const userIndex = this.userArr.findIndex(user => user.id === userId);
@@ -120,6 +120,26 @@ export class RecipesService {
         this.recipeArr[index]=r;
       }
   } 
+
+  updateListBuy(product:any, select:boolean)
+  {
+    let prodB= new IngridientToBuy
+    (product.id,product.count,product.kind,product.name,select);
+    let user=localStorage.getItem('user')||"";
+    const usrId = JSON.parse(user).id;
+    const index = this.userArr.findIndex(u=>u.id==usrId);
+    if(select){
+      this.userArr[index].shoppingList.push(prodB);
+    }
+    else{
+      const ind = this.userArr[index].shoppingList.findIndex((p) => p.id === product.id);
+        if (index !== -1) {
+          this.userArr[index].shoppingList.splice(index, 1);
+        }
+    }
+    console.log("shoppingList: ", this.userArr[index].shoppingList);
+  }
+
   removeRecipe(id: number)
   {
     // console.log("the id r: ",id);
