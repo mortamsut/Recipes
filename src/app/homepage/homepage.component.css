@@ -1,4 +1,23 @@
-.button{
-    /* display:; */
+.image-button-container {
+    position: relative;
+    display: inline-block;
+}
 
+img {
+    width: 100vw;
+    height: 100vh;
+    filter: opacity(50%); /* שימוש ב-CSS filter כדי לשנות את בהירות התמונה */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5); /* רקע בשחור חלבי עם שקיפות */
+    padding: 20px 40px; /* גודל הכפתור */
+    border: none;
+    cursor: pointer;
+    font-size: 30px; /* גודל הטקסט בכפתור */
+    color: white; /* צבע הטקסט בכפתור */
 }
