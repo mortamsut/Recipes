@@ -43,18 +43,8 @@ export class ShowRecipeComponent {
   }
 
   toggleSelection(product: any){
-
-    // if (product.isSelected) {
-    //   this.selectedProducts.push(product);
-    // } else {
-    //   const index = this.selectedProducts.findIndex((p) => p.id === product.id);
-    //   if (index !== -1) {
-    //     this.selectedProducts.splice(index, 1);
-    //   }
-    // }
      this.service.updateListBuy(product,product.isSelected);
-    // console.log("selectedProducts: ",this.selectedProducts);
-  }
+    }
 
   editRecipe(){
     this.router.navigate(['/edit_recipe/',this.id]);
